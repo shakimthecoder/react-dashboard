@@ -37,4 +37,5 @@ const getGraphQLErrors = (body: Record<"errors", GraphQLFormattedError | undefin
         }
 
     }
+    return null;
 }

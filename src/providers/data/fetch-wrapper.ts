@@ -39,3 +39,15 @@ const getGraphQLErrors = (body: Record<"errors", GraphQLFormattedError | undefin
     }
     return null;
 }
+
+export const fetchWrapper = async (url: string, options: RequestInit) => {
+    const response = await customFetch(url, options);
+    const responseClone = response.clone();
+    const body = await responseClone.json();
+    const error = getGraphQLErrors(body);
+
+    if(error){
+        throw error;
+       }
+    else return response;
+}

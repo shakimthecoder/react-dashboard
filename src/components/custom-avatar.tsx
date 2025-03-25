@@ -3,7 +3,7 @@ import { Avatar as AntdAvatar } from 'antd';
 import { User } from "@/graphql/schema.types";
 
 type AvatarProps = {
-    name: string;
+    name?: string;
     style: Object;
 }
 

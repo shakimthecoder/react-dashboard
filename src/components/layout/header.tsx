@@ -1,8 +1,9 @@
 import React from 'react'
+import { CurrentUser } from './current-user';
 
 function Header() {
   return (
-    <div>header</div>
+    <CurrentUser />
   )
 }
 

@@ -1,3 +1,4 @@
+import { useGetIdentity } from '@refinedev/core';
 import { Avatar as AntdAvatar } from 'antd';
 
 type AvatarProps = {
@@ -6,6 +7,7 @@ type AvatarProps = {
 }
 
  const CustomAvatar = ({ name, style, ...rest}: AvatarProps) => {
+    const { data: user } = useGetIdentity();
   return (
     <AntdAvatar
      alt={'React 2025'}

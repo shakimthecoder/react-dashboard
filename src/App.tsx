@@ -40,6 +40,7 @@ import { ForgotPassword } from "./pages/forgotPassword";
 import { Home } from "./pages/home";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
+import Layout  from "./components/layout/index";
 
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
 const WS_URL = "wss://api.nestjs-query.refine.dev/graphql";
@@ -134,14 +135,13 @@ function App() {
                       </Authenticated>
                     }
                   >
-                    <Route path ="/home" element={<Home />} />
+                    </Route>
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route
                       path="/forgot-password"
                       element={<ForgotPassword />}
                     />
-                  </Route>
                 </Routes>
 
                 <RefineKbar />

@@ -17,8 +17,10 @@ type AvatarProps = {
         backgroundColor: '#87d068',
         display: 'flex',
         alignItems: 'center',
-        border: 'none'
-     }}>
+        border: 'none',
+        ...style,
+     }}
+     {...rest}>
         SH
     </AntdAvatar>)
  }

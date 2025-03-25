@@ -98,7 +98,7 @@ function App() {
                         fallback={<CatchAllNavigate to="/login" />}
                       >
                         <ThemedLayoutV2
-                          Header={Header}
+                          //Header={}
                           Sider={(props) => <ThemedSiderV2 {...props} fixed />}
                         >
                           <Outlet />
@@ -134,7 +134,7 @@ function App() {
                       </Authenticated>
                     }
                   >
-                    <Route index element={<Home />} />
+                    <Route path ="/home" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route

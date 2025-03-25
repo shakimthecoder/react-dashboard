@@ -1,5 +1,6 @@
 import { useGetIdentity } from '@refinedev/core';
 import { Avatar as AntdAvatar } from 'antd';
+import { User } from "@/graphql/schema.types";
 
 type AvatarProps = {
     name: string;
@@ -7,7 +8,7 @@ type AvatarProps = {
 }
 
  const CustomAvatar = ({ name, style, ...rest}: AvatarProps) => {
-    const { data: user } = useGetIdentity();
+    const { data: user } = useGetIdentity<User>();
   return (
     <AntdAvatar
      alt={'React 2025'}

@@ -88,6 +88,7 @@ function App() {
                     }
                   >
                     </Route>
+                    <Route path="/home" index element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route

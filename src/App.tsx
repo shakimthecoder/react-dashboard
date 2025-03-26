@@ -29,6 +29,7 @@ import { Home } from "./pages/home";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import Layout  from "./components/layout/index";
+import Header from "./components/layout/header";
 
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
 const WS_URL = "wss://api.nestjs-query.refine.dev/graphql";
@@ -67,7 +68,7 @@ function App() {
                         fallback={<CatchAllNavigate to="/login" />}
                       >
                         <ThemedLayoutV2
-                          //Header={}
+                          Header={Header}
                           Sider={(props) => <ThemedSiderV2 {...props} fixed />}
                         >
                           <Outlet />

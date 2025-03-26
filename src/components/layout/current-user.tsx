@@ -1,12 +1,14 @@
 import React, { useState} from 'react'
 import { Popover } from 'antd'
 import CustomAvatar from '../custom-avatar'
+import { AccountSettings } from './account-settings';
 import { useGetIdentity } from '@refinedev/core';
 import { Button } from 'antd'
 
 import type { User } from "@/graphql/schema.types";
 import { Text } from '../text'
 import { SettingOutlined } from '@ant-design/icons';
+
 
 
 export const CurrentUser = () => {
@@ -28,7 +30,14 @@ export const CurrentUser = () => {
             >
             {user?.name}
             </Text>
-            <div>
+            <div
+             style={{
+                borderTop: '1px solid #d9d9d9',
+                padding: '4px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px'
+             }}>
                 <Button
                     style={{ textAlign: 'left' }}
                     icon={<SettingOutlined />}
@@ -57,6 +66,13 @@ export const CurrentUser = () => {
           style={{ cursor: 'pointer'}}
         />
         </Popover>
+        {user && (
+            <AccountSettings 
+            opened={isOpen} 
+            setOpened={setIsOpen}
+            userId={user.id}
+            />
+        )}
         </>
     )
 

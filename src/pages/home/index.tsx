@@ -1,14 +1,5 @@
-import { useState } from 'react'
+import { CurrentUser } from "@/components/layout/current-user";
 
 export const Home = () => {
-    let[count, setCount] = useState<number>(0);
-
-     const handeClick = () : any => {
-      setCount(count);
-      return count + 1;
-    }
-    return (
-        <>
-        <button onClick={handeClick}>Current count: { count }</button>
-       </>);
+return (<CurrentUser />)
 }

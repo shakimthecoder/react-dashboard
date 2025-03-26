@@ -1,5 +1,16 @@
 import type * as Types from "./schema.types";
 
+export type UpdateUserMutationVariables = Types.Exact<{
+  input: Types.UpdateOneUserInput;
+}>;
+
+export type UpdateUserMutation = {
+  updateOneUser: Pick<
+    Types.User,
+    "id" | "name" | "avatarUrl" | "email" | "phone" | "jobTitle"
+  >;
+};
+
 export type UsersSelectQueryVariables = Types.Exact<{
   filter: Types.UserFilter;
   sorting?: Types.InputMaybe<Array<Types.UserSort> | Types.UserSort>;

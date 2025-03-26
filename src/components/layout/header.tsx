@@ -20,7 +20,7 @@ const headerStyles: React.CSSProperties = {
 function Header() {
   return (
     <div>
-    <Layout.Header>
+    <Layout.Header style={headerStyles}>
       <Space / >
     <CurrentUser />
     </Layout.Header>

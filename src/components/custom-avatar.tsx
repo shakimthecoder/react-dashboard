@@ -1,6 +1,7 @@
 import { useGetIdentity } from '@refinedev/core';
 import { Avatar as AntdAvatar } from 'antd';
 import { User } from "@/graphql/schema.types";
+import { getNameInitials } from '@/utilities';
 
 type AvatarProps = {
     name?: string;
@@ -21,7 +22,7 @@ type AvatarProps = {
         ...style,
      }}
      {...rest}>
-        SH
+        {getNameInitials(name || '')}
     </AntdAvatar>)
  }
 

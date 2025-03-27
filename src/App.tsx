@@ -25,7 +25,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import { dataProvider, liveProvider } from "./providers";
 import { authProvider } from './authProvider';
 import { ForgotPassword } from "./pages/forgotPassword";
-import { Home } from "./pages/home";
+import { Home } from "./pages/home/home";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import Layout  from "./components/layout/index";

@@ -1,8 +1,11 @@
 import { CalendarOutlined } from "@ant-design/icons";
-import { Card } from "antd";
+import { Card, List} from "antd";
+import { useState } from 'react';
 import { Text } from "@/components/text";
 
 export const UpcomingEvents = () => {
+   const [isLoading, setIsLoading] = useState<boolean>(true);
+  
   return (<Card
           title={
             <div style={{
@@ -17,6 +20,8 @@ export const UpcomingEvents = () => {
             </div>
           }
           >
+              {isLoading ? (<List></List>
+              ): <List></List>}
         </Card>
           )
           }

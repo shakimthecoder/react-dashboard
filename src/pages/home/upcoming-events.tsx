@@ -1,4 +1,5 @@
 import { CalendarOutlined } from "@ant-design/icons";
+import UpcomingEventsSkeleton  from "../../components/skeleton/upcoming-events";
 import { Card, List} from "antd";
 import { useState } from 'react';
 import { Text } from "@/components/text";
@@ -26,6 +27,7 @@ export const UpcomingEvents = () => {
               dataSource={Array.from({ length: 5}).map(( _, index) =>
               ({ id: index})
               )}
+              renderItem={() => <UpcomingEventsSkeleton />}
                >
 
                 </List>

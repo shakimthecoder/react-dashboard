@@ -28,10 +28,23 @@ export const UpcomingEvents = () => {
               ({ id: index})
               )}
               renderItem={() => <UpcomingEventsSkeleton />}
-               >
+               />
+              ): (
+              <List
+               itemLayout="horizontal"
+               dataSource={[]} 
+               renderItem={(item) => {
+                return (
+                  <List.Item>
+                    <List.Item.Meta>
+                    </List.Item.Meta>
+                  </List.Item>
+                )
+               }
+              }
+                />
+              )}
+              </Card>)
+            }
 
-                </List>
-              ): <List></List>}
-            </Card>
-          )
-          }
+          

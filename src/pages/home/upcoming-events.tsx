@@ -5,6 +5,7 @@ import { Card, List, Badge} from "antd";
 import { useState } from 'react';
 import { Text } from "@/components/text";
 import { gql } from '@apollo/client';
+import { Authenticated } from "@refinedev/core";
 import { DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY } from "@/graphql/queries"
 
 export const UpcomingEvents = () => {
@@ -20,7 +21,8 @@ export const UpcomingEvents = () => {
   })
 
   
-  return (<Card
+  return (
+         <Card
           title={
             <div style={{
               display: 'flex',
@@ -45,7 +47,7 @@ export const UpcomingEvents = () => {
               ): (
               <List
                itemLayout="horizontal"
-               dataSource={[]} 
+               dataSource={data?.data} 
                renderItem={(item) => {
                const renderDate = getDate(item.startDate, item.endDate);
                 return (

@@ -4,16 +4,21 @@ import { useList } from "@refinedev/core";
 import { Card, List, Badge} from "antd";
 import { useState } from 'react';
 import { Text } from "@/components/text";
+import { gql } from '@apollo/client';
 import { DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY } from "@/graphql/queries"
 
 export const UpcomingEvents = () => {
-   const [isLoading, setIsLoading] = useState<boolean>(true);
-   const { data, isLoading: eventsLoading } = useList({
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { data, isLoading: eventsLoading } = useList({
     resource: 'events',
     meta: {
-      gqlQuery: ''
+      gqlQuery: gql`
+        ${DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY}
+      `
     }
-   })
+  })
+
   
   return (<Card
           title={
@@ -41,7 +46,7 @@ export const UpcomingEvents = () => {
               <List
                itemLayout="horizontal"
                dataSource={[]} 
-               renderItem={(item: { color: string }) => {
+               renderItem={(item) => {
                const renderDate = getDate(item.startDate, item.endDate);
                 return (
                   <List.Item>

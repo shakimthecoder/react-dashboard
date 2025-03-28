@@ -1,11 +1,19 @@
 import { CalendarOutlined } from "@ant-design/icons";
 import UpcomingEventsSkeleton  from "../../components/skeleton/upcoming-events";
+import { useList } from "@refinedev/core";
 import { Card, List, Badge} from "antd";
 import { useState } from 'react';
 import { Text } from "@/components/text";
+import { DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY } from "@/graphql/queries"
 
 export const UpcomingEvents = () => {
    const [isLoading, setIsLoading] = useState<boolean>(true);
+   const { data, isLoading: eventsLoading } = useList({
+    resource: 'events',
+    meta: {
+      gqlQuery: ''
+    }
+   })
   
   return (<Card
           title={

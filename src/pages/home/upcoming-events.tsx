@@ -1,6 +1,6 @@
 import { CalendarOutlined } from "@ant-design/icons";
 import UpcomingEventsSkeleton  from "../../components/skeleton/upcoming-events";
-import { Card, List} from "antd";
+import { Card, List, Badge} from "antd";
 import { useState } from 'react';
 import { Text } from "@/components/text";
 
@@ -33,16 +33,19 @@ export const UpcomingEvents = () => {
               <List
                itemLayout="horizontal"
                dataSource={[]} 
-               renderItem={(item) => {
+               renderItem={(item: { color: string }) => {
+               const renderDate = getDate(item.startDate, item.endDate);
                 return (
                   <List.Item>
-                    <List.Item.Meta>
-                    </List.Item.Meta>
+                    <List.Item.Meta
+                     avatar={<Badge color={item.color} />}
+                     title={<Text size="xs" strong>{renderDate}</Text>}
+                     description={<Text ellipsis={{ tooltip: true }} strong>{item.title}</Text>}
+                    />
                   </List.Item>
                 )
-               }
-              }
-                />
+               }}
+              />
               )}
               </Card>)
             }
